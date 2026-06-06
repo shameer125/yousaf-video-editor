@@ -16,8 +16,6 @@
 
 /* ===== Base Styles ===== */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -132,6 +130,8 @@ h1, h2, h3, h4, h5, h6 {
 .section-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.3), transparent);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* ===== Pulse Animation ===== */
