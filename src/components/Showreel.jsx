@@ -10,7 +10,7 @@ const Showreel = () => {
     <section
       ref={sectionRef}
       id="showreel"
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-16 lg:py-20 overflow-hidden"
     >
       {/* Background ambient glow */}
       <div className="absolute inset-0 pointer-events-none">

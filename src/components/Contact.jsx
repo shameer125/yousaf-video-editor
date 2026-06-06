@@ -129,7 +129,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 bg-black overflow-hidden"
+      className="relative py-16 lg:py-20 bg-black overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />

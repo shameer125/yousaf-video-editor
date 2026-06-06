@@ -61,7 +61,7 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-24 md:py-32 bg-black overflow-hidden"
+      className="relative py-16 lg:py-20 bg-black overflow-hidden"
     >
       {/* Background ambient glow */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -73,9 +73,9 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-10 lg:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
             About <span className="text-red-500">Me</span>
           </h2>
           <div className="w-20 h-1 bg-red-500 mx-auto rounded-full" />
@@ -87,7 +87,7 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start"
         >
           {/* Left Column – Profile Image Placeholder */}
           <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">

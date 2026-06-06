@@ -143,7 +143,7 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="relative py-24 md:py-32 bg-black overflow-hidden"
+      className="relative py-16 lg:py-20 bg-black overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute top-1/4 -left-40 w-80 h-80 bg-red-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -197,7 +197,7 @@ export default function Resume() {
         </motion.div>
 
         {/* Main content grid */}
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Timeline - left / top */}
           <motion.div
             variants={containerVariants}

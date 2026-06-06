@@ -34,7 +34,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-24 md:py-32 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden"
+      className="relative py-16 lg:py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden"
     >
       {/* Background ambient effects */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-red-500/4 rounded-full blur-[140px] pointer-events-none" />
@@ -56,9 +56,9 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-10 lg:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
             My <span className="text-red-500">Skills</span>
           </h2>
           <div className="w-20 h-1 bg-red-500 mx-auto rounded-full" />

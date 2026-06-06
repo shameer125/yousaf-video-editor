@@ -76,7 +76,7 @@ const Services = () => {
     <section
       id="services"
       ref={sectionRef}
-      className="relative overflow-hidden bg-black px-4 py-20 sm:px-6 lg:px-8 lg:py-32"
+      className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
     >
       {/* Background decorative elements */}
       <div className="absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-red-500/20 to-transparent" />
@@ -91,12 +91,12 @@ const Services = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="mb-16 text-center"
+          className="mb-10 lg:mb-14 text-center"
         >
           <span className="mb-4 inline-block rounded-full border border-red-500/20 bg-red-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400">
             What I Offer
           </span>
-          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl tracking-tight">
             My{' '}
             <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
               Services

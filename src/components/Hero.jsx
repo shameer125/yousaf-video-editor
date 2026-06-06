@@ -190,7 +190,7 @@ const Hero = () => {
       {/* ── Content ────────────────────────────────────────────────── */}
       <div
         ref={ref}
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-20"
+        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16"
       >
         {/* Tag line chip */}
         <motion.div
@@ -211,7 +211,7 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tighter mb-6"
         >
           {words.map((word, i) => (
             <motion.span
