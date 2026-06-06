@@ -155,7 +155,7 @@ const Navbar = () => {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {link.label}
+                  {link.name}
                   {isActive && (
                     <motion.span
                       layoutId="activeNav"
@@ -260,7 +260,7 @@ const Navbar = () => {
                           : 'text-gray-300 hover:text-white hover:bg-white/5'
                       }`}
                     >
-                      {link.label}
+                      {link.name}
                     </motion.a>
                   );
                 })}
