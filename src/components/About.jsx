@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Film, Briefcase, Sparkles } from 'lucide-react';
-import { stats } from '../data/siteData';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Film, Briefcase, Sparkles } from "lucide-react";
+import { stats } from "../data/siteData";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -35,45 +35,45 @@ const scaleUpVariants = {
 const experienceHighlights = [
   {
     icon: Film,
-    title: 'Creative Storytelling',
-    text: 'Transforming raw footage into compelling visual narratives that captivate and inspire audiences.',
+    title: "Creative Storytelling",
+    text: "Transforming raw footage into compelling visual narratives that captivate and inspire audiences.",
   },
   {
     icon: Briefcase,
-    title: 'Professional Workflow',
-    text: 'Streamlined editing pipeline ensuring fast turnarounds without compromising on quality.',
+    title: "Professional Workflow",
+    text: "Streamlined editing pipeline ensuring fast turnarounds without compromising on quality.",
   },
   {
     icon: Sparkles,
-    title: 'Cutting-Edge Techniques',
-    text: 'Staying ahead of trends with the latest editing tools, effects, and industry techniques.',
+    title: "Cutting-Edge Techniques",
+    text: "Staying ahead of trends with the latest editing tools, effects, and industry techniques.",
   },
 ];
 
 export default function About() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const statsRef = useRef(null);
-  const statsInView = useInView(statsRef, { once: true, margin: '-50px' });
+  const statsInView = useInView(statsRef, { once: true, margin: "-50px" });
 
   return (
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-16 lg:py-20 bg-black overflow-hidden"
+      className="relative py-20 lg:py-24 overflow-hidden bg-black"
     >
       {/* Background ambient glow */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-red-500/3 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 lg:mb-14"
+          className="text-center mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
             About <span className="text-red-500">Me</span>
@@ -86,11 +86,14 @@ export default function About() {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          animate={isInView ? "visible" : "hidden"}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start"
         >
           {/* Left Column – Profile Image Placeholder */}
-          <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center lg:justify-start"
+          >
             <div className="relative group">
               {/* Decorative outer ring */}
               <div className="absolute -inset-3 bg-gradient-to-br from-red-500/30 via-red-500/10 to-transparent rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
@@ -111,8 +114,8 @@ export default function About() {
                   className="absolute inset-0 opacity-5"
                   style={{
                     backgroundImage:
-                      'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-                    backgroundSize: '30px 30px',
+                      "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
+                    backgroundSize: "30px 30px",
                   }}
                 />
 
@@ -131,8 +134,13 @@ export default function About() {
                 {/* Animated shimmer */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12"
-                  animate={{ x: ['-200%', '200%'] }}
-                  transition={{ duration: 4, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' }}
+                  animate={{ x: ["-200%", "200%"] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                    ease: "easeInOut",
+                  }}
                 />
               </div>
             </div>
@@ -142,21 +150,32 @@ export default function About() {
           <motion.div variants={containerVariants} className="space-y-6">
             <motion.div variants={itemVariants}>
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">
-                Passionate <span className="text-red-500">Video Editor</span> &amp; Visual Storyteller
+                Passionate <span className="text-red-500">Video Editor</span>{" "}
+                &amp; Visual Storyteller
               </h3>
               <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-                Hey there! I&apos;m <span className="text-white font-medium">Syed Yousaf</span>, a
-                passionate video editor with <span className="text-red-400 font-medium">3+ years of professional experience</span> crafting
-                visually stunning content. I specialize in YouTube videos, Instagram Reels, TikTok content,
-                and commercial advertisements.
+                Hey there! I&apos;m{" "}
+                <span className="text-white font-medium">Syed Yousaf</span>, a
+                passionate video editor with{" "}
+                <span className="text-red-400 font-medium">
+                  3+ years of professional experience
+                </span>{" "}
+                crafting visually stunning content. I specialize in YouTube
+                videos, Instagram Reels, TikTok content, and commercial
+                advertisements.
               </p>
             </motion.div>
 
-            <motion.p variants={itemVariants} className="text-gray-400 leading-relaxed text-sm sm:text-base">
-              My journey in video editing began with a fascination for storytelling through visuals. Over the
-              years, I&apos;ve honed my skills in color grading, motion graphics, sound design, and
-              cinematic editing. Every frame I edit is a step toward turning your vision into reality — with
-              precision, creativity, and a touch of cinematic magic.
+            <motion.p
+              variants={itemVariants}
+              className="text-gray-400 leading-relaxed text-sm sm:text-base"
+            >
+              My journey in video editing began with a fascination for
+              storytelling through visuals. Over the years, I&apos;ve honed my
+              skills in color grading, motion graphics, sound design, and
+              cinematic editing. Every frame I edit is a step toward turning
+              your vision into reality — with precision, creativity, and a touch
+              of cinematic magic.
             </motion.p>
 
             {/* Experience Highlight Cards */}
@@ -193,8 +212,8 @@ export default function About() {
           ref={statsRef}
           variants={containerVariants}
           initial="hidden"
-          animate={statsInView ? 'visible' : 'hidden'}
-          className="mt-20 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+          animate={statsInView ? "visible" : "hidden"}
+          className="mt-24 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6"
         >
           {stats.map((stat) => {
             const Icon = stat.icon;

@@ -1,28 +1,28 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Play, Film, Sparkles } from 'lucide-react';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Play, Film, Sparkles } from "lucide-react";
 
 const Showreel = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
     <section
       ref={sectionRef}
       id="showreel"
-      className="relative py-16 lg:py-20 overflow-hidden"
+      className="relative py-20 lg:py-24 overflow-hidden bg-black"
     >
       {/* Background ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 rounded-full blur-[150px]" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <motion.div
@@ -32,16 +32,19 @@ const Showreel = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-6"
           >
             <Film className="w-4 h-4 text-red-500" />
-            <span className="text-sm font-medium text-red-400">Watch My Work</span>
+            <span className="text-sm font-medium text-red-400">
+              Watch My Work
+            </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Featured{' '}
+            Featured{" "}
             <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
               Showreel
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A curated collection of my best work — cinematic edits, motion graphics, and visual storytelling at its finest.
+            A curated collection of my best work — cinematic edits, motion
+            graphics, and visual storytelling at its finest.
           </p>
         </motion.div>
 
@@ -49,7 +52,7 @@ const Showreel = () => {
         <motion.div
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
           animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="relative group"
         >
           {/* Decorative corner brackets */}
@@ -71,10 +74,13 @@ const Showreel = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60" />
 
               {/* Animated grain/noise texture overlay */}
-              <div className="absolute inset-0 opacity-[0.03]" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-                backgroundSize: '128px 128px',
-              }} />
+              <div
+                className="absolute inset-0 opacity-[0.03]"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+                  backgroundSize: "128px 128px",
+                }}
+              />
 
               {/* Horizontal cinematic lines */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -86,25 +92,46 @@ const Showreel = () => {
 
               {/* Floating decorative light streaks */}
               <motion.div
-                animate={{ x: ['-100%', '200%'] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear', repeatDelay: 3 }}
+                animate={{ x: ["-100%", "200%"] }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear",
+                  repeatDelay: 3,
+                }}
                 className="absolute top-1/3 w-64 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent"
               />
               <motion.div
-                animate={{ x: ['200%', '-100%'] }}
-                transition={{ duration: 10, repeat: Infinity, ease: 'linear', repeatDelay: 5 }}
+                animate={{ x: ["200%", "-100%"] }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
+                  repeatDelay: 5,
+                }}
                 className="absolute top-2/3 w-96 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
               />
 
               {/* Decorative bokeh circles */}
               <motion.div
                 animate={{ opacity: [0.1, 0.3, 0.1], scale: [1, 1.2, 1] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute top-1/4 left-1/5 w-32 h-32 bg-red-500/10 rounded-full blur-3xl"
               />
               <motion.div
-                animate={{ opacity: [0.05, 0.15, 0.05], scale: [1.1, 0.9, 1.1] }}
-                transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+                animate={{
+                  opacity: [0.05, 0.15, 0.05],
+                  scale: [1.1, 0.9, 1.1],
+                }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl"
               />
 
@@ -118,12 +145,21 @@ const Showreel = () => {
                   {/* Pulse rings */}
                   <motion.div
                     animate={{ scale: [1, 1.6], opacity: [0.4, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeOut' }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeOut",
+                    }}
                     className="absolute inset-0 rounded-full bg-red-500/30"
                   />
                   <motion.div
                     animate={{ scale: [1, 1.8], opacity: [0.2, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeOut', delay: 0.5 }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeOut",
+                      delay: 0.5,
+                    }}
                     className="absolute inset-0 rounded-full bg-red-500/20"
                   />
 

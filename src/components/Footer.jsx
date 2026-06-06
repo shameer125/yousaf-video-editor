@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
   Github,
   Linkedin,
@@ -8,27 +8,27 @@ import {
   ArrowUp,
   Heart,
   Film,
-} from 'lucide-react';
+} from "lucide-react";
 
 const quickLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Resume', href: '#resume' },
-  { label: 'Contact', href: '#contact' },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Resume", href: "#resume" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const socialLinks = [
-  { icon: Github, label: 'GitHub', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Youtube, label: 'YouTube', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
+  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Youtube, label: "YouTube", href: "#" },
+  { icon: Twitter, label: "Twitter", href: "#" },
 ];
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 export default function Footer() {
@@ -39,7 +39,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        <div className="py-20 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Column 1 - About / Logo */}
           <div className="space-y-5">
             {/* SY Logo */}
@@ -52,15 +52,14 @@ export default function Footer() {
                 SY
               </div>
               <span className="text-white font-bold text-xl tracking-tight">
-                Syed{' '}
-                <span className="text-red-500">Yousaf</span>
+                Syed <span className="text-red-500">Yousaf</span>
               </span>
             </a>
 
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
               Professional video editor and motion designer crafting cinematic
-              visual experiences. Turning raw footage into compelling stories that
-              captivate audiences worldwide.
+              visual experiences. Turning raw footage into compelling stories
+              that captivate audiences worldwide.
             </p>
 
             <div className="flex items-center gap-2 text-gray-600 text-sm">

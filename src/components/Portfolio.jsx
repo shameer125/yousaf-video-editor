@@ -1,15 +1,15 @@
-import { useState, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { ExternalLink, Layers } from 'lucide-react';
-import { categories, projects } from '../data/siteData';
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { ExternalLink, Layers } from "lucide-react";
+import { categories, projects } from "../data/siteData";
 
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState("All");
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const filteredProjects =
-    activeFilter === 'All'
+    activeFilter === "All"
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
@@ -17,21 +17,21 @@ const Portfolio = () => {
     <section
       ref={sectionRef}
       id="portfolio"
-      className="relative py-16 lg:py-20 overflow-hidden"
+      className="relative py-20 lg:py-24 overflow-hidden bg-black"
     >
       {/* Background ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-red-500/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="text-center mb-12"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center mb-14"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -40,16 +40,19 @@ const Portfolio = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-6"
           >
             <Layers className="w-4 h-4 text-red-500" />
-            <span className="text-sm font-medium text-red-400">Creative Works</span>
+            <span className="text-sm font-medium text-red-400">
+              Creative Works
+            </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            My{' '}
+            My{" "}
             <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
               Portfolio
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Browse through my diverse collection of video editing projects spanning multiple categories and styles.
+            Browse through my diverse collection of video editing projects
+            spanning multiple categories and styles.
           </p>
         </motion.div>
 
@@ -58,7 +61,7 @@ const Portfolio = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-3 mb-14"
+          className="flex flex-wrap justify-center gap-4 mb-16"
         >
           {categories.map((category) => (
             <motion.button
@@ -70,8 +73,8 @@ const Portfolio = () => {
                 relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer
                 ${
                   activeFilter === category
-                    ? 'bg-red-500 text-white shadow-lg shadow-red-500/25'
-                    : 'bg-white/5 backdrop-blur-md border border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                    ? "bg-red-500 text-white shadow-lg shadow-red-500/25"
+                    : "bg-white/5 backdrop-blur-md border border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20"
                 }
               `}
             >
@@ -81,7 +84,10 @@ const Portfolio = () => {
         </motion.div>
 
         {/* Project Cards Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
@@ -90,7 +96,7 @@ const Portfolio = () => {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.85 }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <ProjectCard project={project} />
               </motion.div>
@@ -121,20 +127,25 @@ const ProjectCard = ({ project }) => {
   return (
     <motion.div
       whileHover={{ y: -6 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 hover:border-red-500/30 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-500"
     >
       {/* Thumbnail placeholder */}
       <div className="relative h-52 overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/50" />
 
         {/* Decorative grid lines */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }} />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
 
         {/* Animated shimmer on hover */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />

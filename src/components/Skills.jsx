@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { skills } from '../data/siteData';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { skills } from "../data/siteData";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,28 +25,28 @@ const cardVariants = {
 
 export default function Skills() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const gridRef = useRef(null);
-  const gridInView = useInView(gridRef, { once: true, margin: '-50px' });
+  const gridInView = useInView(gridRef, { once: true, margin: "-50px" });
 
   return (
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-16 lg:py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden"
+      className="relative py-20 lg:py-24 overflow-hidden bg-gradient-to-b from-black via-gray-950 to-black"
     >
       {/* Background ambient effects */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-red-500/4 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/3 w-[350px] h-[350px] bg-red-500/3 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-red-500/3 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Subtle grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
+            "linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
       />
 
@@ -64,7 +64,8 @@ export default function Skills() {
           <div className="w-20 h-1 bg-red-500 mx-auto rounded-full" />
           <div className="w-12 h-1 bg-red-500/50 mx-auto rounded-full mt-1.5" />
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-            Mastering the art of visual storytelling through a diverse set of creative tools and techniques.
+            Mastering the art of visual storytelling through a diverse set of
+            creative tools and techniques.
           </p>
         </motion.div>
 
@@ -73,7 +74,7 @@ export default function Skills() {
           ref={gridRef}
           variants={containerVariants}
           initial="hidden"
-          animate={gridInView ? 'visible' : 'hidden'}
+          animate={gridInView ? "visible" : "hidden"}
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5"
         >
           {skills.map((skill, index) => {
@@ -126,7 +127,9 @@ export default function Skills() {
                         background: `linear-gradient(90deg, ${skill.color}, ${skill.color}cc)`,
                       }}
                       initial={{ width: 0 }}
-                      animate={gridInView ? { width: `${skill.level}%` } : { width: 0 }}
+                      animate={
+                        gridInView ? { width: `${skill.level}%` } : { width: 0 }
+                      }
                       transition={{
                         duration: 1.2,
                         delay: 0.3 + index * 0.08,

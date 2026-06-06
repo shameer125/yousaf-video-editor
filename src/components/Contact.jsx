@@ -1,5 +1,5 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
 import {
   Mail,
   Phone,
@@ -13,38 +13,38 @@ import {
   User,
   MessageSquare,
   ArrowRight,
-} from 'lucide-react';
+} from "lucide-react";
 
 const contactInfo = [
   {
     icon: Mail,
-    label: 'Email',
-    value: 'your-email@example.com',
-    href: 'mailto:your-email@example.com',
-    color: 'from-red-500/20 to-orange-500/10',
+    label: "Email",
+    value: "your-email@example.com",
+    href: "mailto:your-email@example.com",
+    color: "from-red-500/20 to-orange-500/10",
   },
   {
     icon: Phone,
-    label: 'Phone',
-    value: '+92 300 0000000',
-    href: 'tel:+923000000000',
-    color: 'from-red-500/20 to-pink-500/10',
+    label: "Phone",
+    value: "+92 300 0000000",
+    href: "tel:+923000000000",
+    color: "from-red-500/20 to-pink-500/10",
   },
   {
     icon: MapPin,
-    label: 'Location',
-    value: 'Pakistan',
+    label: "Location",
+    value: "Pakistan",
     href: null,
-    color: 'from-red-500/20 to-rose-500/10',
+    color: "from-red-500/20 to-rose-500/10",
   },
 ];
 
 const socialLinks = [
-  { icon: Github, label: 'GitHub', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Youtube, label: 'YouTube', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
+  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Youtube, label: "YouTube", href: "#" },
+  { icon: Twitter, label: "Twitter", href: "#" },
 ];
 
 const containerVariants = {
@@ -60,7 +60,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -68,7 +68,7 @@ function ContactCard({ item, index }) {
   const IconComponent = item.icon;
   const Wrapper = item.href ? motion.a : motion.div;
   const wrapperProps = item.href
-    ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
+    ? { href: item.href, target: "_blank", rel: "noopener noreferrer" }
     : {};
 
   return (
@@ -104,12 +104,12 @@ function ContactCard({ item, index }) {
 
 export default function Contact() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [focusedField, setFocusedField] = useState(null);
@@ -129,25 +129,28 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-16 lg:py-20 bg-black overflow-hidden"
+      className="relative py-20 lg:py-24 bg-black overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-500/[0.04] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-red-500/[0.02] rounded-full blur-3xl pointer-events-none" />
+      
+      {/* Grid overlay */}
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={sectionRef}>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full" ref={sectionRef}>
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <span className="text-red-500 text-sm font-semibold tracking-[0.2em] uppercase mb-4 block">
             Contact Me
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Get In{' '}
+            Get In{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
               Touch
             </span>
@@ -166,7 +169,7 @@ export default function Contact() {
             <motion.div
               variants={containerVariants}
               initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
+              animate={isInView ? "visible" : "hidden"}
               className="space-y-4"
             >
               {contactInfo.map((item, index) => (
@@ -199,7 +202,7 @@ export default function Contact() {
                       transition={{
                         duration: 0.4,
                         delay: 0.6 + index * 0.08,
-                        type: 'spring',
+                        type: "spring",
                         stiffness: 200,
                       }}
                       whileHover={{ scale: 1.15, y: -3 }}
@@ -264,7 +267,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    onFocus={() => setFocusedField('name')}
+                    onFocus={() => setFocusedField("name")}
                     onBlur={() => setFocusedField(null)}
                     placeholder="John Doe"
                     className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-600 outline-none focus:border-red-500 focus:bg-white/[0.08] transition-all duration-300 text-sm"
@@ -288,7 +291,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    onFocus={() => setFocusedField('email')}
+                    onFocus={() => setFocusedField("email")}
                     onBlur={() => setFocusedField(null)}
                     placeholder="john@example.com"
                     className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-600 outline-none focus:border-red-500 focus:bg-white/[0.08] transition-all duration-300 text-sm"
@@ -311,7 +314,7 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    onFocus={() => setFocusedField('message')}
+                    onFocus={() => setFocusedField("message")}
                     onBlur={() => setFocusedField(null)}
                     placeholder="Tell me about your project..."
                     rows={5}

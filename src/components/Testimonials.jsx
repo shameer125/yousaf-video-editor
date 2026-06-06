@@ -1,17 +1,17 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { testimonials } from '../data/siteData';
+import { useState, useEffect, useRef, useCallback } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { testimonials } from "../data/siteData";
 
 const AUTOPLAY_INTERVAL = 5000;
 
 const initialsColors = [
-  'from-red-500 to-rose-600',
-  'from-purple-500 to-violet-600',
-  'from-blue-500 to-cyan-600',
-  'from-emerald-500 to-teal-600',
-  'from-orange-500 to-amber-600',
-  'from-pink-500 to-fuchsia-600',
+  "from-red-500 to-rose-600",
+  "from-purple-500 to-violet-600",
+  "from-blue-500 to-cyan-600",
+  "from-emerald-500 to-teal-600",
+  "from-orange-500 to-amber-600",
+  "from-pink-500 to-fuchsia-600",
 ];
 
 const StarRating = ({ rating }) => (
@@ -21,8 +21,8 @@ const StarRating = ({ rating }) => (
         key={i}
         className={`h-4 w-4 ${
           i < rating
-            ? 'fill-yellow-400 text-yellow-400'
-            : 'fill-gray-600 text-gray-600'
+            ? "fill-yellow-400 text-yellow-400"
+            : "fill-gray-600 text-gray-600"
         }`}
       />
     ))}
@@ -71,7 +71,7 @@ const TestimonialCard = ({ testimonial, colorIndex }) => {
 
 const Testimonials = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState(1);
@@ -91,8 +91,8 @@ const Testimonials = () => {
     };
 
     updateVisibleCount();
-    window.addEventListener('resize', updateVisibleCount);
-    return () => window.removeEventListener('resize', updateVisibleCount);
+    window.addEventListener("resize", updateVisibleCount);
+    return () => window.removeEventListener("resize", updateVisibleCount);
   }, []);
 
   const totalSlides = Math.ceil(testimonials.length / visibleCount);
@@ -108,7 +108,7 @@ const Testimonials = () => {
       setDirection(index > currentIndex ? 1 : -1);
       setCurrentIndex(index);
     },
-    [currentIndex]
+    [currentIndex],
   );
 
   const goNext = useCallback(() => {
@@ -132,7 +132,7 @@ const Testimonials = () => {
   const startIdx = currentIndex * visibleCount;
   const visibleTestimonials = testimonials.slice(
     startIdx,
-    startIdx + visibleCount
+    startIdx + visibleCount,
   );
 
   const slideVariants = {
@@ -154,27 +154,28 @@ const Testimonials = () => {
     <section
       id="testimonials"
       ref={sectionRef}
-      className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+      className="relative py-20 lg:py-24 overflow-hidden bg-black"
     >
       {/* Background effects */}
       <div className="absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-red-500/20 to-transparent" />
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500/[0.03] blur-[150px]" />
+        <div className="absolute -left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-red-500/[0.03] blur-[120px]" />
+        <div className="absolute -right-1/4 bottom-1/4 h-[500px] w-[500px] rounded-full bg-red-500/[0.02] blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="mb-10 lg:mb-14 text-center"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-12 lg:mb-16 text-center"
         >
           <span className="mb-4 inline-block rounded-full border border-red-500/20 bg-red-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400">
             Testimonials
           </span>
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl tracking-tight">
-            Client{' '}
+            Client{" "}
             <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
               Testimonials
             </span>
@@ -226,15 +227,15 @@ const Testimonials = () => {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: 'spring', stiffness: 300, damping: 30 },
+                  x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.3 },
                 }}
                 className={`grid gap-6 ${
                   visibleCount === 3
-                    ? 'grid-cols-3'
+                    ? "grid-cols-3"
                     : visibleCount === 2
-                    ? 'grid-cols-2'
-                    : 'grid-cols-1'
+                      ? "grid-cols-2"
+                      : "grid-cols-1"
                 }`}
               >
                 {visibleTestimonials.map((testimonial, i) => (
@@ -257,8 +258,8 @@ const Testimonials = () => {
                 aria-label={`Go to slide ${i + 1}`}
                 className={`relative h-2.5 rounded-full transition-all duration-300 ${
                   i === currentIndex
-                    ? 'w-8 bg-red-500'
-                    : 'w-2.5 bg-white/20 hover:bg-white/40'
+                    ? "w-8 bg-red-500"
+                    : "w-2.5 bg-white/20 hover:bg-white/40"
                 }`}
               >
                 {/* Active dot glow */}

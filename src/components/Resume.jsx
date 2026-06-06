@@ -1,49 +1,56 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Download, FileText, Briefcase, GraduationCap, Award, Calendar } from 'lucide-react';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import {
+  Download,
+  FileText,
+  Briefcase,
+  GraduationCap,
+  Award,
+  Calendar,
+} from "lucide-react";
 
 const timelineData = [
   {
-    year: '2023 — Present',
-    title: 'Senior Video Editor',
-    company: 'Freelance / Remote',
+    year: "2023 — Present",
+    title: "Senior Video Editor",
+    company: "Freelance / Remote",
     description:
-      'Leading video production for international clients. Specializing in cinematic edits, color grading, and motion graphics for YouTube, social media, and commercial projects.',
+      "Leading video production for international clients. Specializing in cinematic edits, color grading, and motion graphics for YouTube, social media, and commercial projects.",
     icon: Briefcase,
   },
   {
-    year: '2021 — 2023',
-    title: 'Video Editor & Motion Designer',
-    company: 'Creative Media Agency',
+    year: "2021 — 2023",
+    title: "Video Editor & Motion Designer",
+    company: "Creative Media Agency",
     description:
-      'Produced high-quality video content for brands and influencers. Managed end-to-end post-production workflows including editing, sound design, and VFX.',
+      "Produced high-quality video content for brands and influencers. Managed end-to-end post-production workflows including editing, sound design, and VFX.",
     icon: Award,
   },
   {
-    year: '2020 — 2021',
-    title: 'Junior Video Editor',
-    company: 'Digital Studios',
+    year: "2020 — 2021",
+    title: "Junior Video Editor",
+    company: "Digital Studios",
     description:
-      'Started professional journey editing short-form content, music videos, and promotional material. Developed expertise in Adobe Premiere Pro and After Effects.',
+      "Started professional journey editing short-form content, music videos, and promotional material. Developed expertise in Adobe Premiere Pro and After Effects.",
     icon: Briefcase,
   },
   {
-    year: '2018 — 2020',
-    title: 'Bachelor in Media & Communications',
-    company: 'University of Creative Arts',
+    year: "2018 — 2020",
+    title: "Bachelor in Media & Communications",
+    company: "University of Creative Arts",
     description:
-      'Studied film production, digital media, and visual storytelling. Graduated with distinction and multiple awards for student film projects.',
+      "Studied film production, digital media, and visual storytelling. Graduated with distinction and multiple awards for student film projects.",
     icon: GraduationCap,
   },
 ];
 
 const skills = [
-  { name: 'Adobe Premiere Pro', level: 95 },
-  { name: 'After Effects', level: 90 },
-  { name: 'DaVinci Resolve', level: 85 },
-  { name: 'Color Grading', level: 88 },
-  { name: 'Motion Graphics', level: 82 },
-  { name: 'Sound Design', level: 78 },
+  { name: "Adobe Premiere Pro", level: 95 },
+  { name: "After Effects", level: 90 },
+  { name: "DaVinci Resolve", level: 85 },
+  { name: "Color Grading", level: 88 },
+  { name: "Motion Graphics", level: 82 },
+  { name: "Sound Design", level: 78 },
 ];
 
 const containerVariants = {
@@ -59,13 +66,13 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 function SkillBar({ name, level, index }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <motion.div
@@ -84,7 +91,11 @@ function SkillBar({ name, level, index }) {
           className="h-full rounded-full bg-gradient-to-r from-red-600 to-red-400"
           initial={{ width: 0 }}
           animate={isInView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1.2, delay: 0.3 + index * 0.1, ease: 'easeOut' }}
+          transition={{
+            duration: 1.2,
+            delay: 0.3 + index * 0.1,
+            ease: "easeOut",
+          }}
         />
       </div>
     </motion.div>
@@ -93,7 +104,7 @@ function SkillBar({ name, level, index }) {
 
 function TimelineItem({ item, index }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
   const isLeft = index % 2 === 0;
   const IconComponent = item.icon;
 
@@ -128,8 +139,12 @@ function TimelineItem({ item, index }) {
             </span>
           </div>
           <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
-          <p className="text-red-400/80 text-sm font-medium mb-3">{item.company}</p>
-          <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+          <p className="text-red-400/80 text-sm font-medium mb-3">
+            {item.company}
+          </p>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            {item.description}
+          </p>
         </div>
       </div>
     </motion.div>
@@ -138,18 +153,18 @@ function TimelineItem({ item, index }) {
 
 export default function Resume() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
     <section
       id="resume"
-      className="relative py-16 lg:py-20 bg-black overflow-hidden"
+      className="relative py-20 lg:py-24 bg-black overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute top-1/4 -left-40 w-80 h-80 bg-red-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-red-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={sectionRef}>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full" ref={sectionRef}>
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -161,7 +176,7 @@ export default function Resume() {
             Career Journey
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            My{' '}
+            My{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">
               Resume
             </span>
@@ -174,7 +189,7 @@ export default function Resume() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mb-20"
+          className="flex flex-wrap justify-center gap-5 mb-24"
         >
           <motion.a
             href="#"
@@ -197,12 +212,12 @@ export default function Resume() {
         </motion.div>
 
         {/* Main content grid */}
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-14">
           {/* Timeline - left / top */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
+            animate={isInView ? "visible" : "hidden"}
             className="lg:col-span-3"
           >
             <motion.h3
@@ -252,10 +267,10 @@ export default function Resume() {
             >
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: '5+', label: 'Years Experience' },
-                  { value: '200+', label: 'Projects Done' },
-                  { value: '50+', label: 'Happy Clients' },
-                  { value: '15+', label: 'Awards Won' },
+                  { value: "5+", label: "Years Experience" },
+                  { value: "200+", label: "Projects Done" },
+                  { value: "50+", label: "Happy Clients" },
+                  { value: "15+", label: "Awards Won" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}

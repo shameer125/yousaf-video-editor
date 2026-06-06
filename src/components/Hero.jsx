@@ -190,7 +190,7 @@ const Hero = () => {
       {/* ── Content ────────────────────────────────────────────────── */}
       <div
         ref={ref}
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16"
+        className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full text-center pt-24 pb-16"
       >
         {/* Tag line chip */}
         <motion.div

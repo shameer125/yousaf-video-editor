@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { CheckCircle, ArrowRight } from 'lucide-react';
-import { services } from '../data/siteData';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { CheckCircle, ArrowRight } from "lucide-react";
+import { services } from "../data/siteData";
 
 const ServiceCard = ({ service, index }) => {
   const Icon = service.icon;
@@ -70,13 +70,13 @@ const ServiceCard = ({ service, index }) => {
 
 const Services = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
   return (
     <section
       id="services"
       ref={sectionRef}
-      className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+      className="relative py-20 lg:py-24 overflow-hidden bg-black"
     >
       {/* Background decorative elements */}
       <div className="absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-red-500/20 to-transparent" />
@@ -85,19 +85,19 @@ const Services = () => {
         <div className="absolute bottom-1/4 left-0 h-[400px] w-[400px] rounded-full bg-red-500/[0.02] blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="mb-10 lg:mb-14 text-center"
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-12 lg:mb-16 text-center"
         >
           <span className="mb-4 inline-block rounded-full border border-red-500/20 bg-red-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-red-400">
             What I Offer
           </span>
           <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl tracking-tight">
-            My{' '}
+            My{" "}
             <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
               Services
             </span>
@@ -128,8 +128,8 @@ const Services = () => {
             },
           }}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10"
         >
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
@@ -141,10 +141,10 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="mt-16 text-center"
+          className="mt-20 text-center"
         >
           <p className="text-sm text-gray-500">
-            Need a custom package?{' '}
+            Need a custom package?{" "}
             <a
               href="#contact"
               className="font-medium text-red-400 underline decoration-red-400/30 underline-offset-4 transition-colors hover:text-red-300 hover:decoration-red-300/50"
