@@ -1,15 +1,15 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Showreel from './components/Showreel'
-import Portfolio from './components/Portfolio'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Showreel from "./components/Showreel";
+import Portfolio from "./components/Portfolio";
 // import BeforeAfter from './components/BeforeAfter'
-import Services from './components/Services'
+import Services from "./components/Services";
 // import Testimonials from './components/Testimonials'
-import Resume from './components/Resume'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import Resume from "./components/Resume";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -48,7 +48,10 @@ function App() {
         <Footer />
       </div>
     </div>
-  )
+
+  );
+
 }
 
-export default App
+
+export default App;
