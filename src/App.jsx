@@ -4,9 +4,9 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Showreel from './components/Showreel'
 import Portfolio from './components/Portfolio'
-import BeforeAfter from './components/BeforeAfter'
+// import BeforeAfter from './components/BeforeAfter'
 import Services from './components/Services'
-import Testimonials from './components/Testimonials'
+// import Testimonials from './components/Testimonials'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -35,12 +35,12 @@ function App() {
         <Showreel />
         <div className="section-divider" />
         <Portfolio />
-        <div className="section-divider" />
-        <BeforeAfter />
+        {/* <div className="section-divider" />
+        <BeforeAfter /> */}
         <div className="section-divider" />
         <Services />
-        <div className="section-divider" />
-        <Testimonials />
+        {/* <div className="section-divider" />
+        <Testimonials /> */}
         <div className="section-divider" />
         <Resume />
         <div className="section-divider" />

@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import {
-  Github,
+  Facebook,
   Linkedin,
   Instagram,
-  Youtube,
   Twitter,
   ArrowUp,
   Heart,
@@ -20,10 +19,9 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Facebook, label: "Facebook", href: "#" },
   { icon: Linkedin, label: "LinkedIn", href: "#" },
   { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
   { icon: Twitter, label: "Twitter", href: "#" },
 ];
 
@@ -64,7 +62,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2 text-gray-600 text-sm">
               <Film className="w-4 h-4 text-red-500/60" />
-              <span>Crafting visuals since 2018</span>
+              <span>Crafting visuals since 2024</span>
             </div>
           </div>
 

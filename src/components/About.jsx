@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Film, Briefcase, Sparkles } from "lucide-react";
 import { stats } from "../data/siteData";
+import aboutimage from "../assets/profile.jpeg";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -121,14 +122,15 @@ export default function About() {
 
                 {/* Initials */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
+                  <img src={aboutimage} alt="Syed Yousaf" />
+                  {/* <div className="text-center">
                     <span className="text-7xl sm:text-8xl font-bold bg-gradient-to-br from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent select-none">
                       SY
                     </span>
                     <div className="mt-3 text-sm text-white/40 tracking-[0.25em] uppercase font-medium">
                       Video Editor
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Animated shimmer */}
@@ -156,10 +158,10 @@ export default function About() {
               <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
                 Hey there! I&apos;m{" "}
                 <span className="text-white font-medium">Syed Yousaf</span>, a
-                passionate video editor with{" "}
-                <span className="text-red-400 font-medium">
+                passionate video editor,{" "}
+                {/* <span className="text-red-400 font-medium">
                   3+ years of professional experience
-                </span>{" "}
+                </span>{" "} */}
                 crafting visually stunning content. I specialize in YouTube
                 videos, Instagram Reels, TikTok content, and commercial
                 advertisements.

@@ -6,6 +6,18 @@ const Showreel = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
+  const videoRef = useRef(null);
+
+const handlePlay = () => {
+  if (!videoRef.current) return;
+
+  if (videoRef.current.paused) {
+    videoRef.current.play();
+  } else {
+    videoRef.current.pause();
+  }
+};
+
   return (
     <section
       ref={sectionRef}
@@ -68,10 +80,24 @@ const Showreel = () => {
           <div className="relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/50">
             {/* Cinematic placeholder */}
             <div className="relative aspect-video w-full overflow-hidden">
+              {/* 🎥 ADD VIDEO HERE */}
+              <video
+                ref={videoRef}
+                src="/videos/showreel.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-contain bg-black z-0"
+              />
+
+              {/* DARK OVERLAY */}
+              <div className="absolute inset-0 bg-black/40 z-10" />
+
               {/* Multi-layer gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
               <div className="absolute inset-0 bg-gradient-to-tr from-red-950/40 via-transparent to-purple-950/30" />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60" /> */}
 
               {/* Animated grain/noise texture overlay */}
               <div
@@ -138,6 +164,7 @@ const Showreel = () => {
               {/* Center play button */}
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <motion.button
+                  onClick={handlePlay}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="relative group/play cursor-pointer"

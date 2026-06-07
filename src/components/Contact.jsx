@@ -5,10 +5,9 @@ import {
   Phone,
   MapPin,
   Send,
-  Github,
+  Facebook,
   Linkedin,
   Instagram,
-  Youtube,
   Twitter,
   User,
   MessageSquare,
@@ -19,15 +18,15 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "your-email@example.com",
-    href: "mailto:your-email@example.com",
+    value: "razayousaf209@gmail.com",
+    href: "mailto:razayousaf209@gmail.com",
     color: "from-red-500/20 to-orange-500/10",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+92 300 0000000",
-    href: "tel:+923000000000",
+    value: "+92 331 3224247",
+    href: "tel:+923313224247",
     color: "from-red-500/20 to-pink-500/10",
   },
   {
@@ -40,10 +39,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Facebook, label: "Facebook", href: "#" },
   { icon: Linkedin, label: "LinkedIn", href: "#" },
   { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
   { icon: Twitter, label: "Twitter", href: "#" },
 ];
 

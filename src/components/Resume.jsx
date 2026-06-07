@@ -11,15 +11,15 @@ import {
 
 const timelineData = [
   {
-    year: "2023 — Present",
-    title: "Senior Video Editor",
+    year: "2026 — Present",
+    title: "Video Editor",
     company: "Freelance / Remote",
     description:
       "Leading video production for international clients. Specializing in cinematic edits, color grading, and motion graphics for YouTube, social media, and commercial projects.",
     icon: Briefcase,
   },
   {
-    year: "2021 — 2023",
+    year: "2024 — 2026",
     title: "Video Editor & Motion Designer",
     company: "Creative Media Agency",
     description:
@@ -27,20 +27,12 @@ const timelineData = [
     icon: Award,
   },
   {
-    year: "2020 — 2021",
+    year: "2024 — 2025",
     title: "Junior Video Editor",
     company: "Digital Studios",
     description:
       "Started professional journey editing short-form content, music videos, and promotional material. Developed expertise in Adobe Premiere Pro and After Effects.",
     icon: Briefcase,
-  },
-  {
-    year: "2018 — 2020",
-    title: "Bachelor in Media & Communications",
-    company: "University of Creative Arts",
-    description:
-      "Studied film production, digital media, and visual storytelling. Graduated with distinction and multiple awards for student film projects.",
-    icon: GraduationCap,
   },
 ];
 
@@ -192,7 +184,7 @@ export default function Resume() {
           className="flex flex-wrap justify-center gap-5 mb-24"
         >
           <motion.a
-            href="#"
+            href="resume.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-full transition-colors duration-300 shadow-lg shadow-red-500/25"
@@ -201,7 +193,7 @@ export default function Resume() {
             Download CV
           </motion.a>
           <motion.a
-            href="#"
+            href="resume.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center gap-2.5 px-8 py-3.5 border-2 border-white/20 hover:border-red-500/60 text-white font-semibold rounded-full transition-all duration-300 bg-white/5 backdrop-blur-sm hover:bg-white/10"
@@ -267,10 +259,10 @@ export default function Resume() {
             >
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: "5+", label: "Years Experience" },
-                  { value: "200+", label: "Projects Done" },
-                  { value: "50+", label: "Happy Clients" },
-                  { value: "15+", label: "Awards Won" },
+                  { value: "2+", label: "Years Experience" },
+                  { value: "100+", label: "Projects Done" },
+                  { value: "30+", label: "Happy Clients" },
+                  { value: "5+", label: "Awards Won" },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
