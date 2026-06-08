@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Film, Briefcase, Sparkles } from "lucide-react";
 import { stats } from "../data/siteData";
-import aboutimage from "../assets/profile.jpeg";
+import aboutimage from "../assets/profile-syr.jpeg";
 
 const containerVariants = {
   hidden: { opacity: 0 },
