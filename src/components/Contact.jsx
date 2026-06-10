@@ -135,7 +135,7 @@ const handleSubmit = async (e) => {
     });
 
     if (response.ok) {
-      toast.success("Message sent successfully! 🚀", {
+      toast.success("Message sent successfully! ", {
         id: loadingToast,
       });
       setFormData({ name: "", email: "", message: "" });
