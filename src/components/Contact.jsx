@@ -119,10 +119,28 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // UI only — no actual submission
-  };
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+
+   try {
+     const response = await fetch("https://formspree.io/f/xrevkrro", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
+
+     if (response.ok) {
+       alert("Message sent successfully!");
+       setFormData({ name: "", email: "", message: "" });
+     } else {
+       alert("Something went wrong!");
+     }
+   } catch (error) {
+     alert("Error submitting form");
+   }
+ };
 
   return (
     <section
