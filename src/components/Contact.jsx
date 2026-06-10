@@ -120,28 +120,36 @@ export default function Contact() {
     }));
   };
 
- const handleSubmit = async (e) => {
-   e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-   try {
-     const response = await fetch("https://formspree.io/f/xrevkrro", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify(formData),
-     });
+  const loadingToast = toast.loading("Sending message...");
 
-     if (response.ok) {
-       alert("Message sent successfully!");
-       setFormData({ name: "", email: "", message: "" });
-     } else {
-       alert("Something went wrong!");
-     }
-   } catch (error) {
-     alert("Error submitting form");
-   }
- };
+  try {
+    const response = await fetch("https://formspree.io/f/xrevkrro", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      toast.success("Message sent successfully! 🚀", {
+        id: loadingToast,
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      toast.error("Something went wrong ❌", {
+        id: loadingToast,
+      });
+    }
+  } catch (error) {
+    toast.error("Error submitting form ❌", {
+      id: loadingToast,
+    });
+  }
+};
 
   return (
     <section
