@@ -24,7 +24,11 @@ const socialLinks = [
     label: "Facebook",
     href: "https://www.facebook.com/share/1EY8VM7YZm/",
   },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/syed-yousaf-b468a3391",
+  },
   { icon: Instagram, label: "Instagram", href: "#" },
   { icon: Twitter, label: "Twitter", href: "#" },
 ];
