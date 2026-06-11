@@ -34,7 +34,7 @@ const socialLinks = [
     label: "Instagram",
     href: "https://www.instagram.com/itx__yousaf3?igsh=anQ4bnBueXI4d3dw",
   },
-  { icon: Twitter, label: "Twitter", href: "#" },
+  { icon: Twitter, label: "Twitter", href: "https://x.com/jaafri_s" },
 ];
 
 function scrollToTop() {
