@@ -19,7 +19,11 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: "#" },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1EY8VM7YZm/",
+  },
   { icon: Linkedin, label: "LinkedIn", href: "#" },
   { icon: Instagram, label: "Instagram", href: "#" },
   { icon: Twitter, label: "Twitter", href: "#" },
