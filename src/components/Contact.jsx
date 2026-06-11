@@ -40,10 +40,22 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1EY8VM7YZm/",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/syed-yousaf-b468a3391",
+  },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/itx__yousaf3?igsh=anQ4bnBueXI4d3dw",
+  },
+  { icon: Twitter, label: "Twitter", href: "https://x.com/jaafri_s" },
 ];
 
 const containerVariants = {
